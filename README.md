@@ -2,9 +2,13 @@
 This project demonstrates on basic functionalities for admin and employee to maintain the products, salary, employee info etc. 
 
 Prerequisites:
+
 -> Microsoft visual studio (any version - latest version recommended)
+
 -> Java (any version - latest version recommended)
+
 -> C# 
+
 -> Install SQLClient 
 
 
