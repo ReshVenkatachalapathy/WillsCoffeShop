@@ -13,9 +13,13 @@ Prerequisites:
 
 
 Execution of the project:
+
 -> Download the project from the github by cloning it.
+
 -> Open the visual studio and select exsiting project
+
 -> Select the downloaded project
+
 -> Click on run which will initiate the execution. Execution will invoke the MainWindow.xaml which is the login page of the project and the consecutive pages gets called as per the user's request
 
 Functionalities of the project:
@@ -23,21 +27,37 @@ Functionalities of the project:
 Login: is general page for both user type where the user has to mention the username and password to login into the application. If it is a new user, click on signup to create an account.
 
 -> Administrator user type:
+
 Products Details: 
+
 Admin can add/ update or delete products to the coffee store.
+
  	Add: User must assign item ID, name, prize and upload a sample picture of the product.
+  
  	Update: User can make changes to the existing product.
+  
  	Delete: User can delete an existing product.
+  
 Report Details:
+
 Employee monthly payroll will be made record of here. 
+
  	Add: Admin must insert employee id, name, payment period, payment cost, number of hours worked.
+  
  	Edit: Admin can make changes to the employee payroll.
+  
  	Delete: Admin can delete an employee’s payroll.
+  
 Employee Details:
+
  	Add: Insert the employee details like name, phone number, address, email address, gender, date of birth, date of joining, salary.
+  
  	Update: Admin can make changes to the existing employee.
+  
  	Delete: Admin can delete an existing employee.
+  
 Logout:
+
 User can securely log out of the system
 
 
