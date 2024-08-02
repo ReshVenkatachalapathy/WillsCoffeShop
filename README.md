@@ -12,6 +12,7 @@ Prerequisites:
 -> Install SQLClient 
 
 
+
 Execution of the project:
 
 -> Download the project from the github by cloning it.
@@ -21,6 +22,8 @@ Execution of the project:
 -> Select the downloaded project
 
 -> Click on run which will initiate the execution. Execution will invoke the MainWindow.xaml which is the login page of the project and the consecutive pages gets called as per the user's request
+
+
 
 Functionalities of the project:
 
