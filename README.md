@@ -34,7 +34,19 @@ Functionalities of the project:
 
 Login: is general page for both user type where the user has to mention the username and password to login into the application. If it is a new user, click on signup to create an account.
 
+![image](https://github.com/user-attachments/assets/2ba7eabf-41b9-4a44-86a5-468053f8c00c)
+
+![image](https://github.com/user-attachments/assets/13012585-2063-4290-ae6a-69cc9abcd736)
+
+
 -> Administrator user type:
+
+Home Page:
+
+  Displays the different features admin has access to.
+
+![image](https://github.com/user-attachments/assets/070f6fc2-3bc0-4f6f-a887-c549b485d0ec)
+
 
 Products Details: 
 
@@ -45,8 +57,11 @@ Admin can add/ update or delete products to the coffee store.
  	Update: User can make changes to the existing product.
   
  	Delete: User can delete an existing product.
+
+  ![image](https://github.com/user-attachments/assets/f4ac4c35-d4bf-43ea-bc78-f5c4d380e4df)
+
   
-Report Details:
+Payroll Details:
 
 Employee monthly payroll will be made record of here. 
 
@@ -55,6 +70,9 @@ Employee monthly payroll will be made record of here.
  	Edit: Admin can make changes to the employee payroll.
   
  	Delete: Admin can delete an employee’s payroll.
+
+  ![image](https://github.com/user-attachments/assets/9f650e2a-013b-46a6-94ef-f56df3759e75)
+
   
 Employee Details:
 
@@ -66,7 +84,7 @@ Employee Details:
   
 Logout:
 
-User can securely log out of the system
+  User can securely log out of the system
 
 
 -> Employee user type:
@@ -79,11 +97,13 @@ Profile:
   
 Payroll:
 
+  View the payroll details like pay period, salary etc
+  
  	Download payroll: Employee can select the month to download their salary slips.
   
 Logout:
 
-User can securely log out of the system
+  User can securely log out of the system
 
 
 
