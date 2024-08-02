@@ -1,4 +1,4 @@
-# WillsCoffeShop
+# Wills Coffe Shop :) 
 
 
 This project demonstrates on basic functionalities for admin and employee to maintain the products, salary, employee info etc. 
