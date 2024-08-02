@@ -34,8 +34,6 @@ Functionalities of the project:
 
 Login: is general page for both user type where the user has to mention the username and password to login into the application. If it is a new user, click on signup to create an account.
 
-![image](https://github.com/user-attachments/assets/2ba7eabf-41b9-4a44-86a5-468053f8c00c)
-
 ![image](https://github.com/user-attachments/assets/13012585-2063-4290-ae6a-69cc9abcd736)
 
 
@@ -81,6 +79,9 @@ Employee Details:
  	Update: Admin can make changes to the existing employee.
   
  	Delete: Admin can delete an existing employee.
+
+  ![image](https://github.com/user-attachments/assets/c52cee93-e292-457f-9b33-71d2c4e55a0f)
+
   
 Logout:
 
