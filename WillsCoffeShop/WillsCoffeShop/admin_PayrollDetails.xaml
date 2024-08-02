@@ -1,0 +1,53 @@
+﻿<Window x:Class="WillsCoffeShop.admin_PayrollDetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WillsCoffeShop"
+        mc:Ignorable="d"
+        Title="Payroll Management" Height="700" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Top row for Back and Logout buttons -->
+        <DockPanel LastChildFill="False">
+            <Button Content="Back" Width="100" Margin="10" Click="BackButton_Click" DockPanel.Dock="Left"/>
+            <Button Content="Logout" Width="100" Margin="10" Click="LogoutButton_Click" DockPanel.Dock="Right"/>
+        </DockPanel>
+
+        <!-- Main content in the center -->
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Payroll Management" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,20,0,10"/>
+
+            <TextBlock Text="Employee ID:" Margin="10"/>
+            <TextBox Name="EmployeeIdTextBox" Width="300" Margin="10" TextChanged="EmployeeIdTextBox_TextChanged"/>
+
+            <TextBlock Text="Name:" Margin="10"/>
+            <TextBox Name="NameTextBox" Width="300" Margin="10"/>
+
+            <TextBlock Text="Payment Period From:" Margin="10"/>
+            <DatePicker Name="PaymentPeriodFromDatePicker" Width="300" Margin="10"/>
+
+            <TextBlock Text="Payment Period To:" Margin="10"/>
+            <DatePicker Name="PaymentPeriodToDatePicker" Width="300" Margin="10"/>
+
+            <TextBlock Text="Salary:" Margin="10"/>
+            <TextBox Name="SalaryTextBox" Width="300" Margin="10" TextChanged="SalaryTextBox_TextChanged"/>
+
+            <TextBlock Text="Total Hours Worked:" Margin="10"/>
+            <TextBox Name="TotalHoursWorkedTextBox" Width="300" Margin="10" TextChanged="TotalHoursWorkedTextBox_TextChanged"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
+                <Button Content="Add" Width="100" Margin="5" Click="AddButton_Click"/>
+                <Button Content="Edit" Width="100" Margin="5" Click="EditButton_Click"/>
+                <Button Content="Delete" Width="100" Margin="5" Click="DeleteButton_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
