@@ -1,5 +1,9 @@
 # WillsCoffeShop
+
+
 This project demonstrates on basic functionalities for admin and employee to maintain the products, salary, employee info etc. 
+
+
 
 Prerequisites:
 
@@ -26,6 +30,7 @@ Execution of the project:
 
 
 Functionalities of the project:
+
 
 Login: is general page for both user type where the user has to mention the username and password to login into the application. If it is a new user, click on signup to create an account.
 
@@ -63,6 +68,18 @@ Logout:
 
 User can securely log out of the system
 
+
+-> Employee user type:
+
+Profile:
+ 	View: Display the employee details 
+ 	Update: Edit the employee details
+  
+Payroll:
+ 	Download payroll: Employee can select the month to download their salary slips.
+  
+Logout:
+User can securely log out of the system
 
 
 
