@@ -41,7 +41,7 @@ Login: is general page for both user type where the user has to mention the user
 
 Home Page:
 
-  Displays the different features admin has access to.
+    Displays the different features admin has access to.
 
 ![image](https://github.com/user-attachments/assets/070f6fc2-3bc0-4f6f-a887-c549b485d0ec)
 
