@@ -1,4 +1,4 @@
-# Wills Coffe Shop :) 
+# Wills Coffe Shop  
 
 
 This project demonstrates on basic functionalities for admin and employee to maintain the products, salary, employee info etc. 
@@ -108,13 +108,19 @@ Logout:
 
 
 
+
 Group members details:
+
 Person 1: Reshma Venkatachalapathy
+
 Person 2: Mahesh Nimmakayala
+
 Person 3:  Arfeena Jamal
+
 Person 4:  Arundhathi Jayaprakash
 
 
-Project Link: https://github.com/your_username/repo_name
+
+Project Link: [https://github.com/your_username/repo_name](https://github.com/ReshVenkatachalapathy/WillsCoffeShop.git)
 
 
