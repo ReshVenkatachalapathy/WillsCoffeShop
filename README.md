@@ -98,13 +98,13 @@ Profile:
   
 Payroll:
 
-  View the payroll details like pay period, salary etc
+    View the payroll details like pay period, salary etc
   
  	Download payroll: Employee can select the month to download their salary slips.
   
 Logout:
 
-  User can securely log out of the system
+    User can securely log out of the system
 
 
 
