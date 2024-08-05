@@ -15,9 +15,7 @@ using System.Windows.Shapes;
 
 namespace WillsCoffeShop
 {
-    /// <summary>
-    /// Interaction logic for admin_PayrollDetails.xaml
-    /// </summary>
+
     public partial class admin_PayrollDetails : Window
     {
 
@@ -103,7 +101,7 @@ namespace WillsCoffeShop
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-            string query = "UPDATE PayrollTable SET Name = @Name, Salary = @Salary, Total_Hours_Worked = @TotalHoursWorked,Payment_Period_From = @PaymentPeriodFrom, Payment_Period_To = @PaymentPeriodTo WHERE Employee_ID = @EmployeeID";
+            string query = "UPDATE PayrollTable SET Employee_Name = @Name, Salary = @Salary, Total_Hours = @TotalHoursWorked,Payment_Period_From = @PaymentPeriodFrom, Payment_Period_To = @PaymentPeriodTo WHERE Employee_ID = @EmployeeID";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

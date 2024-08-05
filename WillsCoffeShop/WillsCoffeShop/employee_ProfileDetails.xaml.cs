@@ -80,14 +80,18 @@ namespace WillsCoffeShop
             messageBox.Show();
         }
 
-        private void BackButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void LogoutButton_Click(object sender, RoutedEventArgs e)
         {
+            this.Close();
+            MainWindow loginWindow = new MainWindow();
+            loginWindow.Show();
+        }
 
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            employee_HomePage empHmPg = new employee_HomePage(_username);
+            empHmPg.Show();
         }
     }
 }

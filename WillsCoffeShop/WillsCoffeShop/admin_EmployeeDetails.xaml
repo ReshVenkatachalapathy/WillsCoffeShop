@@ -57,7 +57,7 @@
                 <TextBlock Text="Date of Joining:" Margin="10,0"/>
                 <DatePicker Name="DateofJoining" Width="300" Margin="10,5"/>
 
-                <TextBlock Text="Salary:" Margin="10,0"/>
+                <TextBlock Text="Salary Per HR:" Margin="10,0"/>
                 <TextBox Name="SalaryTextBox" Width="300" Margin="10,5"/>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">

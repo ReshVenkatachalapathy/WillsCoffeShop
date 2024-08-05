@@ -16,7 +16,7 @@ namespace WillsCoffeShop
 
         private void LogoutButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Logging out...");
+
             this.Close();
             MainWindow loginWindow = new MainWindow();
             loginWindow.Show();
@@ -24,7 +24,7 @@ namespace WillsCoffeShop
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Going back to the previous page...");
+
             this.Close();
             admin_HomePage adminHomePage = new admin_HomePage();
             adminHomePage.Show();
@@ -32,19 +32,18 @@ namespace WillsCoffeShop
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            String ID =  EmployeeIDTextBox.Text;
+            string ID = EmployeeIDTextBox.Text;
             string firstName = FirstNameTextBox.Text;
             string lastName = LastNameTextBox.Text;
             string contact = PhoneNumberTextBox.Text;
             string address = AddressesTextBox.Text;
             string email = EmailAddressTextBox.Text;
-            string country = (GenderComboBox.SelectedItem as ComboBoxItem)?.Content.ToString();
             DateTime? dob = DOBDatePicker.SelectedDate;
             DateTime? dateOfJoining = DateofJoining.SelectedDate;
             string salary = SalaryTextBox.Text;
-            String gender = GenderComboBox.Text;
+            string gender = (GenderComboBox.SelectedItem as ComboBoxItem)?.Content.ToString();
 
-            if (string.IsNullOrWhiteSpace(ID)||string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(contact) || string.IsNullOrWhiteSpace(email))
+            if (string.IsNullOrWhiteSpace(ID) || string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(contact) || string.IsNullOrWhiteSpace(email))
             {
                 ShowCustomMessage("Please fill in all required fields.", 2000);
                 return;
@@ -52,8 +51,8 @@ namespace WillsCoffeShop
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "INSERT INTO employeeTable (Employee_ID, Employee_FirstName, Employee_LastName, Address, Contact, Email_address, Date_Of_Birth, Country, Salary,Gender,Date_of_Joining) " +
-                               "VALUES (@ID,@FirstName, @LastName, @Address, @Contact, @Email, @DateOfBirth, @Country, @Salary,@Gender,@dateOfJoining)";
+                string query = "INSERT INTO employeeTable (Employee_ID, Employee_FirstName, Employee_LastName, Address, Contact, Email_Address, Date_of_Birth, Salary, Gender, Date_of_Joining) " +
+                               "VALUES (@ID, @FirstName, @LastName, @Address, @Contact, @Email, @DateOfBirth, @Salary, @Gender, @DateOfJoining)";
 
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@ID", ID);
@@ -63,10 +62,10 @@ namespace WillsCoffeShop
                 command.Parameters.AddWithValue("@Contact", contact);
                 command.Parameters.AddWithValue("@Email", email);
                 command.Parameters.AddWithValue("@DateOfBirth", dob.HasValue ? (object)dob.Value : DBNull.Value);
-                command.Parameters.AddWithValue("@DateOfBirth", dateOfJoining.HasValue ? (object)dateOfJoining.Value : DBNull.Value);
-                command.Parameters.AddWithValue("@Country", country);
                 command.Parameters.AddWithValue("@Salary", salary);
                 command.Parameters.AddWithValue("@Gender", gender);
+                command.Parameters.AddWithValue("@DateOfJoining", dateOfJoining.HasValue ? (object)dateOfJoining.Value : DBNull.Value);
+
                 try
                 {
                     connection.Open();
@@ -120,34 +119,74 @@ namespace WillsCoffeShop
                 string currentLastName = reader["Employee_LastName"].ToString();
                 string currentContact = reader["Contact"].ToString();
                 string currentAddress = reader["Address"].ToString();
-                string currentEmail = reader["Email_address"].ToString();
-                DateTime? currentDOB = reader["Date_Of_Birth"] as DateTime?;
-                DateTime? currentdateOfJoining = reader["Data_of_Joining"] as DateTime?;
+                string currentEmail = reader["Email_Address"].ToString();
+                DateTime? currentDOB = reader["Date_of_Birth"] as DateTime?;
+                DateTime? currentDateOfJoining = reader["Date_of_Joining"] as DateTime?;
                 string currentSalary = reader["Salary"].ToString();
                 reader.Close();
 
-                // Update query with only modified values
-                string query = "UPDATE employeeTable SET " +
-                               "Employee_FirstName = @FirstName, " +
-                               "Employee_LastName = @LastName, " +
-                               "Address = @Address, " +
-                               "Contact = @Contact, " +
-                               "Email_address = @Email, " +
-                               "Date_Of_Birth = @DateOfBirth, " +
-                               "Data_of_Joining = @Date, " +
-                               "Salary = @Salary " +
-                               "WHERE Employee_ID = @EmployeeId";
+                // Build update query dynamically
+                string query = "UPDATE employeeTable SET ";
+                bool firstParamAdded = false;
+
+                if (!string.IsNullOrEmpty(firstName))
+                {
+                    query += "Employee_FirstName = @FirstName";
+                    firstParamAdded = true;
+                }
+                if (!string.IsNullOrEmpty(lastName))
+                {
+                    query += (firstParamAdded ? ", " : "") + "Employee_LastName = @LastName";
+                    firstParamAdded = true;
+                }
+                if (!string.IsNullOrEmpty(address))
+                {
+                    query += (firstParamAdded ? ", " : "") + "Address = @Address";
+                    firstParamAdded = true;
+                }
+                if (!string.IsNullOrEmpty(contact))
+                {
+                    query += (firstParamAdded ? ", " : "") + "Contact = @Contact";
+                    firstParamAdded = true;
+                }
+                if (!string.IsNullOrEmpty(email))
+                {
+                    query += (firstParamAdded ? ", " : "") + "Email_Address = @Email";
+                    firstParamAdded = true;
+                }
+                if (dob.HasValue)
+                {
+                    query += (firstParamAdded ? ", " : "") + "Date_of_Birth = @DateOfBirth";
+                    firstParamAdded = true;
+                }
+                if (dateOfJoining.HasValue)
+                {
+                    query += (firstParamAdded ? ", " : "") + "Date_of_Joining = @DateOfJoining";
+                    firstParamAdded = true;
+                }
+                if (!string.IsNullOrEmpty(salary))
+                {
+                    query += (firstParamAdded ? ", " : "") + "Salary = @Salary";
+                    firstParamAdded = true;
+                }
+                if (!string.IsNullOrEmpty(gender))
+                {
+                    query += (firstParamAdded ? ", " : "") + "Gender = @Gender";
+                }
+
+                query += " WHERE Employee_ID = @EmployeeId";
 
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@EmployeeId", employeeId);
-                command.Parameters.AddWithValue("@FirstName", string.IsNullOrEmpty(firstName) ? (object)DBNull.Value : firstName);
-                command.Parameters.AddWithValue("@LastName", string.IsNullOrEmpty(lastName) ? (object)DBNull.Value : lastName);
-                command.Parameters.AddWithValue("@Address", string.IsNullOrEmpty(address) ? (object)DBNull.Value : address);
-                command.Parameters.AddWithValue("@Contact", string.IsNullOrEmpty(contact) ? (object)DBNull.Value : contact);
-                command.Parameters.AddWithValue("@Email", string.IsNullOrEmpty(email) ? (object)DBNull.Value : email);
-                command.Parameters.AddWithValue("@DateOfBirth", dob.HasValue ? (object)dob.Value : (object)DBNull.Value);
-                command.Parameters.AddWithValue("@dateOfJoining", dob.HasValue ? (object)dob.Value : (object)DBNull.Value);
-                command.Parameters.AddWithValue("@Salary", string.IsNullOrEmpty(salary) ? (object)DBNull.Value : salary);
+                if (!string.IsNullOrEmpty(firstName)) command.Parameters.AddWithValue("@FirstName", firstName);
+                if (!string.IsNullOrEmpty(lastName)) command.Parameters.AddWithValue("@LastName", lastName);
+                if (!string.IsNullOrEmpty(address)) command.Parameters.AddWithValue("@Address", address);
+                if (!string.IsNullOrEmpty(contact)) command.Parameters.AddWithValue("@Contact", contact);
+                if (!string.IsNullOrEmpty(email)) command.Parameters.AddWithValue("@Email", email);
+                if (dob.HasValue) command.Parameters.AddWithValue("@DateOfBirth", dob.Value);
+                if (dateOfJoining.HasValue) command.Parameters.AddWithValue("@DateOfJoining", dateOfJoining.Value);
+                if (!string.IsNullOrEmpty(salary)) command.Parameters.AddWithValue("@Salary", salary);
+                if (!string.IsNullOrEmpty(gender)) command.Parameters.AddWithValue("@Gender", gender);
 
                 try
                 {
@@ -160,6 +199,7 @@ namespace WillsCoffeShop
                 }
             }
         }
+
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {

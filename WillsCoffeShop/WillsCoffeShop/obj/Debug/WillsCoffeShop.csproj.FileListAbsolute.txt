@@ -37,3 +37,5 @@ C:\Users\User\source\repos\WillsCoffeShop\WillsCoffeShop\obj\Debug\employee_Help
 C:\Users\User\source\repos\WillsCoffeShop\WillsCoffeShop\obj\Debug\employee_HelpTicket.baml
 C:\Users\User\source\repos\WillsCoffeShop\WillsCoffeShop\obj\Debug\admin_TicketPage.g.cs
 C:\Users\User\source\repos\WillsCoffeShop\WillsCoffeShop\obj\Debug\admin_TicketPage.baml
+C:\Users\User\source\repos\WillsCoffeShop\WillsCoffeShop\obj\Debug\employee_ProfileInformation.g.cs
+C:\Users\User\source\repos\WillsCoffeShop\WillsCoffeShop\obj\Debug\employee_ProfileInformation.baml

@@ -114,7 +114,7 @@ namespace WillsCoffeShop
             if (PaymentPeriodDatePicker.SelectedDate.HasValue)
             {
                 DateTime selectedDate = PaymentPeriodDatePicker.SelectedDate.Value;
-                string query = "SELECT Salary, Total_Hours FROM PayrollTable WHERE Employee_Id = @id AND Payment_Period_From <= @selectedDate AND Payment_Period_To >= @selectedDate";
+                string query = "SELECT Employee_Id, Salary, Total_Hours, Payment_Period_From, Payment_Period_To  FROM PayrollTable WHERE Employee_Id = @id AND Payment_Period_From <= @selectedDate AND Payment_Period_To >= @selectedDate";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
@@ -128,8 +128,12 @@ namespace WillsCoffeShop
                         SqlDataReader reader = command.ExecuteReader();
                         if (reader.Read())
                         {
+                            EmpIDLabel.Content = reader["Employee_Id"].ToString();
                             AmtPaidLabel.Content = reader["Salary"].ToString();
                             HrsWorkedLabel.Content = reader["Total_Hours"].ToString();
+                            PayPeriodFromLabel.Content = reader["Payment_Period_From"].ToString();
+                            PayPeriodToLabel.Content = reader["Payment_Period_To"].ToString();
+
                         }
                         else
                         {

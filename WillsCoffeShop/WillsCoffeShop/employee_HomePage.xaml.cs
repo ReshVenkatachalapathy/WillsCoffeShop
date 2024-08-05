@@ -85,5 +85,11 @@ namespace WillsCoffeShop
         {
             // Implement navigation logic for back button if needed
         }
+
+        private void ProfileInformationButton_Click(object sender, RoutedEventArgs e)
+        {
+            employee_ProfileInformation empProfileInfo = new employee_ProfileInformation(_username);
+            empProfileInfo.Show();  
+        }
     }
 }

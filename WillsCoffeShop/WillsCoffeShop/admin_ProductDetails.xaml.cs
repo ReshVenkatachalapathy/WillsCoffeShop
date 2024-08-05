@@ -15,9 +15,7 @@ using System.Windows.Shapes;
 
 namespace WillsCoffeShop
 {
-    /// <summary>
-    /// Interaction logic for admin_ProductDetails.xaml
-    /// </summary>
+
     public partial class admin_ProductDetails : Window
     {
         public admin_ProductDetails()
@@ -27,7 +25,6 @@ namespace WillsCoffeShop
 
         private void LogoutButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Logout button clicked.");
             this.Close();
             MainWindow loginWindow = new MainWindow();
             loginWindow.Show();
@@ -36,7 +33,6 @@ namespace WillsCoffeShop
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Back button clicked.");
             this.Close();
             admin_HomePage adminHomePage = new admin_HomePage();
             adminHomePage.Show();
@@ -44,7 +40,6 @@ namespace WillsCoffeShop
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Add button clicked.");
             string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\User\\Documents\\employeeInfo.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=False";
             string query = "INSERT INTO ProductTable (Item_ID, Item_Name, Item_Description, Item_Price) VALUES (@ItemID, @ItemName, @ItemDescription, @ItemPrice)";
 
@@ -74,7 +69,6 @@ namespace WillsCoffeShop
 
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Update button clicked.");
             string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\User\\Documents\\employeeInfo.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=False";
 
             string query = "UPDATE ProductTable SET Item_Name = @ItemName, Item_Description = @ItemDescription, Item_Price = @ItemPrice WHERE Item_ID = @ItemID";
@@ -112,7 +106,6 @@ namespace WillsCoffeShop
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Delete button clicked.");
             string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\User\\Documents\\employeeInfo.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=False";
             string query = "DELETE FROM ProductTable WHERE Item_ID = @ItemID";
 
