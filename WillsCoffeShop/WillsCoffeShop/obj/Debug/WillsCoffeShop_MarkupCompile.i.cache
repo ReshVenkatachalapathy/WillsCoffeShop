@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\User\source\repos\WillsCoffeShop\WillsCoffeShop\App.xaml
-81725168536
+131024613717
 
-13-1521898188
+18-276317377
 13-1310406943
-admin_EmployeeDetails.xaml;admin_HomePage.xaml;admin_PayrollDetails.xaml;admin_ProductDetails.xaml;admin_ViewData.xaml;customeMessageBox.xaml;MainWindow.xaml;reusable_Codes.xaml;
+admin_EmployeeDetails.xaml;admin_HomePage.xaml;admin_PayrollDetails.xaml;admin_ProductDetails.xaml;admin_TicketPage.xaml;admin_ViewData.xaml;customeMessageBox.xaml;employee_HelpTicket.xaml;employee_HomePage.xaml;employee_ProfileDetails.xaml;employee_ViewPayroll.xaml;MainWindow.xaml;reusable_Codes.xaml;
 
-False
+True
 

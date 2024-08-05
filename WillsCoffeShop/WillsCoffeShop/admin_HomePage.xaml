@@ -5,14 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WillsCoffeShop"
         mc:Ignorable="d"
-        Title="admin_HomePage" Height="450" Width="800">
+        Title="admin_HomePage" Height="550" Width="800">
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Welcome, User" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,20,0,10"/>
+            <TextBlock Text="Welcome, Admin" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,20,0,10"/>
             <TextBlock Text="Your dashboard view is below" FontSize="16" HorizontalAlignment="Center" Margin="0,0,0,30"/>
             <Button Content="Product Details" Width="200" Height="50" Margin="10" Click="ProductDetailsButton_Click"/>
             <Button Content="Payroll Details" Width="200" Height="50" Margin="10" Click="ReportDetailsButton_Click"/>
             <Button Content="Employee Details" Width="200" Height="50" Margin="10" Click="EmployeeDetailsButton_Click"/>
+            <Button Content="Ticket Details" Width="200" Height="50" Margin="10" Click="TicketButton_Click"/>
             <Button Content="Logout" Width="200" Height="50" Margin="10" Click="LogoutButton_Click"/>
         </StackPanel>
     </Grid>

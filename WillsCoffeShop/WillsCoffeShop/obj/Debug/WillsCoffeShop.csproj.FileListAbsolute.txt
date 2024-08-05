@@ -26,3 +26,14 @@ C:\Users\User\source\repos\WillsCoffeShop\WillsCoffeShop\obj\Debug\admin_ViewDat
 C:\Users\User\source\repos\WillsCoffeShop\WillsCoffeShop\obj\Debug\customeMessageBox.baml
 C:\Users\User\source\repos\WillsCoffeShop\WillsCoffeShop\obj\Debug\customeMessageBox.g.cs
 C:\Users\User\source\repos\WillsCoffeShop\WillsCoffeShop\obj\Debug\reusable_Codes.g.cs
+C:\Users\User\source\repos\WillsCoffeShop\WillsCoffeShop\obj\Debug\reusable_Codes.baml
+C:\Users\User\source\repos\WillsCoffeShop\WillsCoffeShop\obj\Debug\employee_HomePage.g.cs
+C:\Users\User\source\repos\WillsCoffeShop\WillsCoffeShop\obj\Debug\employee_ProfileDetails.g.cs
+C:\Users\User\source\repos\WillsCoffeShop\WillsCoffeShop\obj\Debug\employee_HomePage.baml
+C:\Users\User\source\repos\WillsCoffeShop\WillsCoffeShop\obj\Debug\employee_ProfileDetails.baml
+C:\Users\User\source\repos\WillsCoffeShop\WillsCoffeShop\obj\Debug\employee_ViewPayroll.g.cs
+C:\Users\User\source\repos\WillsCoffeShop\WillsCoffeShop\obj\Debug\employee_ViewPayroll.baml
+C:\Users\User\source\repos\WillsCoffeShop\WillsCoffeShop\obj\Debug\employee_HelpTicket.g.cs
+C:\Users\User\source\repos\WillsCoffeShop\WillsCoffeShop\obj\Debug\employee_HelpTicket.baml
+C:\Users\User\source\repos\WillsCoffeShop\WillsCoffeShop\obj\Debug\admin_TicketPage.g.cs
+C:\Users\User\source\repos\WillsCoffeShop\WillsCoffeShop\obj\Debug\admin_TicketPage.baml

@@ -41,18 +41,22 @@ namespace WillsCoffeShop
         private void EmployeeDetailsButton_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Employee Details button clicked.");
-            admin_EmployeeDetails adEmpDetails = new admin_EmployeeDetails();       
-            adEmpDetails.Show();    
+            admin_EmployeeDetails adEmployeeDetails = new admin_EmployeeDetails();
+            adEmployeeDetails.Show();    
         }
 
         private void LogoutButton_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Logout button clicked.");
-            // Implement the logout functionality here
-            // For example, close the AdminHomePage window and show the login window
             this.Close();
             MainWindow loginWindow = new MainWindow();
             loginWindow.Show();
+        }
+
+        private void TicketButton_Click(object sender, RoutedEventArgs e)
+        {
+            admin_TicketPage admin_TicketPage = new admin_TicketPage();
+            admin_TicketPage.Show();    
         }
     }
 }

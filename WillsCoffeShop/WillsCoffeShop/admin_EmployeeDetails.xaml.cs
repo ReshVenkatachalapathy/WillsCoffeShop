@@ -5,11 +5,11 @@ using System.Windows.Controls;
 
 namespace WillsCoffeShop
 {
-    public partial class EmployeeDetails : Window
+    public partial class admin_EmployeeDetails : Window
     {
         string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\User\\Documents\\employeeInfo.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=False";
 
-        public EmployeeDetails()
+        public admin_EmployeeDetails()
         {
             InitializeComponent();
         }
@@ -32,6 +32,7 @@ namespace WillsCoffeShop
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
+            String ID =  EmployeeIDTextBox.Text;
             string firstName = FirstNameTextBox.Text;
             string lastName = LastNameTextBox.Text;
             string contact = PhoneNumberTextBox.Text;
@@ -41,8 +42,9 @@ namespace WillsCoffeShop
             DateTime? dob = DOBDatePicker.SelectedDate;
             DateTime? dateOfJoining = DateofJoining.SelectedDate;
             string salary = SalaryTextBox.Text;
+            String gender = GenderComboBox.Text;
 
-            if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(contact) || string.IsNullOrWhiteSpace(email))
+            if (string.IsNullOrWhiteSpace(ID)||string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(contact) || string.IsNullOrWhiteSpace(email))
             {
                 ShowCustomMessage("Please fill in all required fields.", 2000);
                 return;
@@ -50,19 +52,21 @@ namespace WillsCoffeShop
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "INSERT INTO employeeTable (Employee_FirstName, Employee_LastName, Address, Contact, Email_address, Date_Of_Birth, Country, Salary) " +
-                               "VALUES (@FirstName, @LastName, @Address, @Contact, @Email, @DateOfBirth, @Country, @Salary)";
+                string query = "INSERT INTO employeeTable (Employee_ID, Employee_FirstName, Employee_LastName, Address, Contact, Email_address, Date_Of_Birth, Country, Salary,Gender,Date_of_Joining) " +
+                               "VALUES (@ID,@FirstName, @LastName, @Address, @Contact, @Email, @DateOfBirth, @Country, @Salary,@Gender,@dateOfJoining)";
 
                 SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@ID", ID);
                 command.Parameters.AddWithValue("@FirstName", firstName);
                 command.Parameters.AddWithValue("@LastName", lastName);
                 command.Parameters.AddWithValue("@Address", address);
                 command.Parameters.AddWithValue("@Contact", contact);
                 command.Parameters.AddWithValue("@Email", email);
                 command.Parameters.AddWithValue("@DateOfBirth", dob.HasValue ? (object)dob.Value : DBNull.Value);
+                command.Parameters.AddWithValue("@DateOfBirth", dateOfJoining.HasValue ? (object)dateOfJoining.Value : DBNull.Value);
                 command.Parameters.AddWithValue("@Country", country);
                 command.Parameters.AddWithValue("@Salary", salary);
-
+                command.Parameters.AddWithValue("@Gender", gender);
                 try
                 {
                     connection.Open();
@@ -84,8 +88,9 @@ namespace WillsCoffeShop
             string contact = PhoneNumberTextBox.Text;
             string address = AddressesTextBox.Text;
             string email = EmailAddressTextBox.Text;
-            string country = (GenderComboBox.SelectedItem as ComboBoxItem)?.Content.ToString();
+            string gender = (GenderComboBox.SelectedItem as ComboBoxItem)?.Content.ToString();
             DateTime? dob = DOBDatePicker.SelectedDate;
+            DateTime? dateOfJoining = DateofJoining.SelectedDate;
             string salary = SalaryTextBox.Text;
 
             if (string.IsNullOrWhiteSpace(employeeId))
@@ -116,8 +121,8 @@ namespace WillsCoffeShop
                 string currentContact = reader["Contact"].ToString();
                 string currentAddress = reader["Address"].ToString();
                 string currentEmail = reader["Email_address"].ToString();
-                string currentCountry = reader["Country"].ToString();
                 DateTime? currentDOB = reader["Date_Of_Birth"] as DateTime?;
+                DateTime? currentdateOfJoining = reader["Data_of_Joining"] as DateTime?;
                 string currentSalary = reader["Salary"].ToString();
                 reader.Close();
 
@@ -129,7 +134,7 @@ namespace WillsCoffeShop
                                "Contact = @Contact, " +
                                "Email_address = @Email, " +
                                "Date_Of_Birth = @DateOfBirth, " +
-                               "Country = @Country, " +
+                               "Data_of_Joining = @Date, " +
                                "Salary = @Salary " +
                                "WHERE Employee_ID = @EmployeeId";
 
@@ -141,7 +146,7 @@ namespace WillsCoffeShop
                 command.Parameters.AddWithValue("@Contact", string.IsNullOrEmpty(contact) ? (object)DBNull.Value : contact);
                 command.Parameters.AddWithValue("@Email", string.IsNullOrEmpty(email) ? (object)DBNull.Value : email);
                 command.Parameters.AddWithValue("@DateOfBirth", dob.HasValue ? (object)dob.Value : (object)DBNull.Value);
-                command.Parameters.AddWithValue("@Country", string.IsNullOrEmpty(country) ? (object)DBNull.Value : country);
+                command.Parameters.AddWithValue("@dateOfJoining", dob.HasValue ? (object)dob.Value : (object)DBNull.Value);
                 command.Parameters.AddWithValue("@Salary", string.IsNullOrEmpty(salary) ? (object)DBNull.Value : salary);
 
                 try
@@ -197,6 +202,11 @@ namespace WillsCoffeShop
         {
             CustomMessageBox messageBox = new CustomMessageBox(message, duration);
             messageBox.Show();
+        }
+
+        private void GenderComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

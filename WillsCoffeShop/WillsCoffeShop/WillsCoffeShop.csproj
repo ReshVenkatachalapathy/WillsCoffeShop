@@ -55,6 +55,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="admin_TicketPage.xaml.cs">
+      <DependentUpon>admin_TicketPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="employee_HelpTicket.xaml.cs">
+      <DependentUpon>employee_HelpTicket.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="employee_HomePage.xaml.cs">
+      <DependentUpon>employee_HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="employee_ProfileDetails.xaml.cs">
+      <DependentUpon>employee_ProfileDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="employee_ViewPayroll.xaml.cs">
+      <DependentUpon>employee_ViewPayroll.xaml</DependentUpon>
+    </Compile>
     <Compile Include="reusable_Codes.xaml.cs">
       <DependentUpon>reusable_Codes.xaml</DependentUpon>
     </Compile>
@@ -74,11 +89,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="admin_TicketPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="admin_ViewData.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="customeMessageBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="employee_HelpTicket.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="employee_HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="employee_ProfileDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="employee_ViewPayroll.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
