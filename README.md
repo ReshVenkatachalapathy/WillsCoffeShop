@@ -108,6 +108,31 @@ Logout:
 
 
 
+Object Oriented Programming Language Concepts in the Project:
+
+Inheritance concept ->
+
+        1) admin_HomePage.xaml.cs - Child of HomePage.xaml.cs
+
+        2) employee_HomePage.xaml.cs - Child of HomePage.xaml.cs
+
+Multilevel Inheritance -> 
+
+        1) HomePage extends Window
+   
+        2) admin_HomePage, employee_HomePage extends HomePage
+   
+        3) Window methods and HomePage methods are implemented in child classes
+
+
+Overriding concept ->
+
+        1) admin_HomePage.xaml.cs - LogoutButton_Click method overridden from Parent class
+
+        2) employee_HomePage.xaml.cs - LogoutButton_Click method overridden from Parent class
+
+
+
 
 Group members details:
 
